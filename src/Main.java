@@ -1,10 +1,8 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-    Streaming netflix = new Streaming();
-        Scanner scanner = new Scanner(System.in);
+    Streaming s = new Streaming("Netflix");
 
         // MOVIES
 
@@ -73,40 +71,22 @@ public class Main {
         homeland.addSeason(homelandS1);
         homeland.addSeason(homelandS2);
 
-    netflix.addMedia(matrix);
-    netflix.addMedia(gladiator);
-    netflix.addMedia(interstellar);
-    netflix.addMedia(broen);
-    netflix.addMedia(homeland);
+        s.addMovie(matrix);
+        s.addMovie(gladiator);
+        s.addMovie(interstellar);
+        s.addSeries(broen);
+        s.addSeries(homeland);
 
-    String serietitel = "";
-    int seasonnumber = 0;
-    int episodenumber = 0;
-
-    /*
-        System.out.println("       === Velkommen til Netflix === \n" +
-                "Hvad vil du se? Tryk 1 for film og 2 for serie.");
-        int indholdsvalg = scanner.nextInt();
-        scanner.nextLine();
-        if (indholdsvalg == 2) {
-            System.out.println("Skriv seriens titel.");
-            serietitel = scanner.nextLine();
-            System.out.println("Skriv sæsonnummer.");
-            seasonnumber = scanner.nextInt() - 1;
-            System.out.println("Skriv episodenummer.");
-            episodenumber = scanner.nextInt() - 1;
-        }
-
-        broen.getSeasons().get(seasonnumber).getEpisodes().get(episodenumber).play();
-        */
-
-
-        broen.getInfo();
-        System.out.println("");
-        matrix.play();
-        matrix.getInfo();
+        System.out.println(broen.getInfo());
+        System.out.println(matrix.getInfo());
         broen.calculateEpisodes();
-        homeland.calculateEpisodes();
+        matrix.play();
 
+        Episode epi = s.getEpisode("Broen", 2, 2);
+        if (epi != null) {
+            epi.play();
+        } else {
+            System.out.println("Den valgte episode findes ikke.");
+        }
     }
 }

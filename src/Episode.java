@@ -11,6 +11,7 @@ public class Episode implements Playable {
         this.seriesTitle = seriesTitle;
     }
 
+    @Override
     public void play() {
         System.out.println(
                 "Afspiller: " +seriesTitle + " | Sæson " + seasonNumber + " | Episode " + episodeNumber + ": " + title);

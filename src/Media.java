@@ -20,4 +20,6 @@ public abstract class Media {
     public ArrayList<String> getActors() {
         return actors;
     }
+
+    public abstract String getInfo();
 }

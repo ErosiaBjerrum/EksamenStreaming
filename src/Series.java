@@ -11,14 +11,10 @@ public class Series extends Media {
     public int calculateEpisodes() {
         int totalepisodes = 0;
             for (Season season : seasons) {
-                totalepisodes += season.getEpisodes().size();
+                totalepisodes += season.getEpisodeCount();
             }
         System.out.println("Serien " + getTitle() + " har " + totalepisodes + " afsnit.");
         return totalepisodes;
-    }
-
-    public void getInfo() {
-        System.out.println(getTitle() + " med " + String.join(", ", actors));
     }
 
     public void addSeason(Season season) {
@@ -27,5 +23,17 @@ public class Series extends Media {
 
     public ArrayList<Season> getSeasons() {
         return seasons;
+    }
+
+    public Episode getEpisode(int seasonNumber, int episodeNumber) {
+        if (seasonNumber < 1 || seasonNumber > seasons.size()) {
+            return null;
+        }
+        return seasons.get(seasonNumber - 1).getEpisode(episodeNumber);
+    }
+
+    @Override
+    public String getInfo() {
+        return getTitle() + " med " + String.join(", ", actors);
     }
 }

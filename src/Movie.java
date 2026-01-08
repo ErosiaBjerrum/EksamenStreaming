@@ -8,8 +8,9 @@ public class Movie extends Media implements Playable {
         this.director = director;
     }
 
-    public void getInfo() {
-        System.out.println(getTitle() + " med " + String.join(", ", actors) + " og instrueret af " + director);
+    @Override
+    public String getInfo() {
+        return getTitle() + " med " + String.join(", ", actors) + " og instrueret af " + director;
     }
 
     @Override

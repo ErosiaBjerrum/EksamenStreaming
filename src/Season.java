@@ -13,8 +13,16 @@ public class Season {
         episodes.add(episode);
     }
 
-    public ArrayList<Episode> getEpisodes() {
-        return episodes;
+    public Episode getEpisode(int episodeNumber) {
+        if (episodeNumber < 1 || episodeNumber > episodes.size()) {
+            return null;
+        }
+        return episodes.get(episodeNumber - 1);
+    }
+
+
+    public int getEpisodeCount() {
+        return episodes.size();
     }
 
     public int getSeasonNumber() {
