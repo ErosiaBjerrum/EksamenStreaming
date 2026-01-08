@@ -14,6 +14,6 @@ public class Episode implements Playable {
     @Override
     public void play() {
         System.out.println(
-                "Afspiller: " +seriesTitle + " | Sæson " + seasonNumber + " | Episode " + episodeNumber + ": " + title);
+                "Playing: " +seriesTitle + " | Season " + seasonNumber + " | Episode " + episodeNumber + ": " + title + "\n");
     }
 }

@@ -10,11 +10,11 @@ public class Movie extends Media implements Playable {
 
     @Override
     public String getInfo() {
-        return getTitle() + " med " + String.join(", ", actors) + " og instrueret af " + director;
+        return getTitle() + " with " + String.join(" and ", actors) + " and directed by " + director + "\n";
     }
 
     @Override
     public void play() {
-        System.out.println("Afspiller: " + getTitle());
+        System.out.println("Playing: " + getTitle() + "\n");
     }
 }

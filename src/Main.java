@@ -82,11 +82,17 @@ public class Main {
         broen.calculateEpisodes();
 
         s.getMovie("Gladiator").play();
-        Episode epi = s.getEpisode("Broen", 2, 2);
-        if (epi != null) {
-            epi.play();
+        Episode epi2 = s.getEpisode("Broen", 2, 2);
+        if (epi2 != null) {
+            epi2.play();
         } else {
-            System.out.println("Den valgte episode findes ikke.");
+            System.out.println("The selected episode does not exist.");
+        }
+        Episode epi12 = s.getEpisode("Broen", 2, 12);
+        if (epi12 != null) {
+            epi12.play();
+        } else {
+            System.out.println("The selected episode does not exist.");
         }
     }
 }

@@ -13,7 +13,7 @@ public class Series extends Media {
             for (Season season : seasons) {
                 totalepisodes += season.getEpisodeCount();
             }
-        System.out.println("Serien " + getTitle() + " har " + totalepisodes + " afsnit.");
+        System.out.println("The series " + getTitle() + " has " + totalepisodes + " episodes.\n");
         return totalepisodes;
     }
 
@@ -34,6 +34,6 @@ public class Series extends Media {
 
     @Override
     public String getInfo() {
-        return getTitle() + " med " + String.join(", ", actors);
+        return getTitle() + " with " + String.join(" and ", actors) + "\n";
     }
 }
