@@ -80,8 +80,8 @@ public class Main {
         System.out.println(broen.getInfo());
         System.out.println(matrix.getInfo());
         broen.calculateEpisodes();
-        matrix.play();
 
+        s.getMovie("Gladiator").play();
         Episode epi = s.getEpisode("Broen", 2, 2);
         if (epi != null) {
             epi.play();
